@@ -1,2 +1,5 @@
 includes/db.php
 .idea/*
+.DS_Store
+admin/.DS_Store
+images/
