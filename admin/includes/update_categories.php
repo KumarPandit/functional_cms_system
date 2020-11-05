@@ -11,15 +11,7 @@
                 $cat_id = $row['cat_id'];
                 $cat_title = $row['cat_title'];
                 ?>
-
                 <input value="<?php if(isset($cat_title)){echo $cat_title;} ?>" type="text" class="form-control" name="cat_title">
-
-
-
-
-
-
-
 
             <?php }
         } ?>
@@ -35,18 +27,7 @@
             }
             header("Location: categories.php");
         }
-
-
-
-
-
-
         ?>
-
-
-
-
-
     </div>
     <div class="form-group">
         <input class="btn btn-primary" type="submit" name="update_category" value="Update Category">
