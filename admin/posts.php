@@ -19,20 +19,22 @@
                     if(isset($_GET['source'])){
                        $source= $_GET['source'];
                     } else {
-                        $source="";
+                        $source=' ';
                     }
                     switch ($source){
-                        case '34';
+                        case 'add_post';
                         include "includes/add_post.php";
                         break;
 
+                        case '35';
+                        echo "1";
+                         break;
+
                         default:
-                            include 'includes/view_all_posts.php';
+                         include 'includes/view_all_posts.php';
 
                         break;
                     }
-
-
                     ?>
                 </div>
             </div>
