@@ -80,6 +80,22 @@ if(isset($_POST['update_post'])){
         <label for="title">Post Authpr</label>
         <input value="<?php echo $post_author; ?>" value="<?php echo $post_author; ?>" type="text" class="form-control" name="author">
     </div>
+
+    <div class="form-group">
+        <label for="user_role">Select User Role</label><br />
+        <select name="user_role" id="">
+            <?php
+            $query = "SELECT * FROM users";
+            $select_user_roles = mysqli_query($connection, $query);
+            confirmQuery($select_user_roles);
+            while ($row = mysqli_fetch_assoc($select_user_roles)) {
+                $user_id = $row['user_id'];
+                $user_role = $row['user_role'];
+                echo "<option value='{$user_id}'>{$user_role}</option>";
+            }
+            ?>
+        </select>
+    </div>
     <div class="form-group">
         <label for="post_status">Post Status</label>
         <input value="<?php echo $post_status; ?>" type="text" class="form-control" name="post_status">

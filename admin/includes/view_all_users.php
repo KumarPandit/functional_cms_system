@@ -17,7 +17,7 @@
     while($row = mysqli_fetch_assoc($select_users)) {
         $user_id = $row['user_id'];
         $username = $row['username'];
-        $password = $row['user_password'];
+        $user_password = $row['user_password'];
         $user_firstname = $row['user_firstname'];
         $user_lasname = $row['user_lastname'];
         $user_email = $row['user_email'];
