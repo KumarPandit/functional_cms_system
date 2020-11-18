@@ -17,27 +17,6 @@ if(isset($_GET['edit_user'])) {
 
     }
 }
-
-//
-//
-//if(isset($_POST['edit_user'])){
-//
-//    $user_firstname = $_POST['user_firstname'];
-//    $user_lastname = $_POST['user_lastname'];
-//    $user_role = $_POST['user_role'];
-////     $post_image = $_FILES['image']['name'];
-////     $post_image_temp = $_FILES['image']['tmp_name'];
-//    $username = $_POST['username'];
-//    $user_email = $_POST['user_email'];
-//    $user_password = $_POST['user_password'];
-////    $post_date = date('d-m-y');
-//
-////    move_uploaded_file($post_image_temp, "../images/$post_image");
-//    $query = "INSERT INTO users(user_firstname,user_lastname,user_role,username,user_email,user_password) ";
-//    $query .= "VALUES('{$user_firstname}','{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}' ) ";
-//    $insert_user_query = mysqli_query($connection,$query);
-//    confirmQuery($insert_user_query);
-//}
 ?>
 
 
@@ -56,9 +35,14 @@ if(isset($_GET['edit_user'])) {
     <div class="form-group">
         <label for="user_role">Select User Role</label><br />
         <select name="user_role" id="">
-            <option value="subscriber">Select Options</option>
-            <option value="admin">Admin</option>
-            <option value="subscriber">Subscriber</option>
+            <option value="subscriber"><?php echo $user_role; ?></option>
+            <?php
+            if ($user_role == 'admin'){
+                echo "<option value='subscriber'>Subscriber</option>";
+                } else {
+                echo "<option value='admin'>Admin</option>";
+            }
+            ?>
         </select>
     </div>
     <div class="form-group">
