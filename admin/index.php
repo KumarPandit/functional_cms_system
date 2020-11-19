@@ -1,6 +1,5 @@
 
 <?php include 'includes/admin_header.php' ?>
-<?php session_start(); ?>
     <div id="wrapper">
         <?php include 'includes/admin_navigation.php' ?>
         <div id="page-wrapper">
