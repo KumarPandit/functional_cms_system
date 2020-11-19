@@ -17,6 +17,32 @@ if(isset($_GET['edit_user'])) {
 
     }
 }
+
+if(isset($_POST['edit_user'])) {
+    $user_firstname = $_POST['user_firstname'];
+    $user_lastname = $_POST['user_lastname'];
+    $user_role = $_POST['user_role'];
+//     $post_image = $_FILES['image']['name'];
+//     $post_image_temp = $_FILES['image']['tmp_name'];
+    $username = $_POST['username'];
+    $user_email = $_POST['user_email'];
+    $user_password = $_POST['user_password'];
+    $user_role = $_POST['user_role'];
+    $query = "UPDATE users SET ";
+    $query .= "user_firstname  = '{$user_firstname}', ";
+    $query .= "user_lastname= '{$user_lastname}', ";
+    $query .= "user_email = '{$user_email}', ";
+    $query .= "username = '{$username}', ";
+    $query .= "user_password = '{$user_password}', ";
+    $query .= "user_role = '{$user_role}' " ;
+    $query .= "WHERE user_id = {$user_id} ";
+    $edit_user_query = mysqli_query($connection, $query);
+
+
+    confirmQuery($edit_user_query);
+
+}
+
 ?>
 
 
