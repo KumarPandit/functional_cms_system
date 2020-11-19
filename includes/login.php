@@ -26,7 +26,7 @@ while($row = mysqli_fetch_array($select_user_query)){
 if($username !== $db_username && $password !==$db_user_password){
     header("Location: ../index.php");
 } else if ($username == $db_username && $password ==$db_user_password){
-    echo $_SESSION['username'] = $db_username;
+   $_SESSION['username'] = $db_username;
     $_SESSION['firstname'] = $db_user_firstname;
     $_SESSION['lastname'] = $db_user_lastname;
     $_SESSION['user_role'] = $db_user_role;
