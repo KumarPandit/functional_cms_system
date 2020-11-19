@@ -1,9 +1,7 @@
 
 <?php include 'includes/admin_header.php' ?>
+<?php session_start(); ?>
     <div id="wrapper">
-
-    <?php if ($connection) echo "Connected" ?>
-
         <?php include 'includes/admin_navigation.php' ?>
         <div id="page-wrapper">
 
@@ -14,7 +12,11 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                            Welcome to Admin
-                            <small>Author</small>
+
+
+                            <small><?php
+                                echo $_SESSION['username'];
+                            ?></small>
                         </h1>
                     </div>
                 </div>
