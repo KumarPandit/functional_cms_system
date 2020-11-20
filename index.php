@@ -25,9 +25,8 @@
                     $post_comment_count = $row['post_comment_count'];
                     $post_status = $row['post_status'];
                     $post_views_count = $row['post_views_count'];
-                    if ($post_status !== 'published'){
-                        echo "<h1>No Post Here Sorry</h1>";
-                    } else {
+                    if ($post_status == 'published'){
+
                         ?>
                         <h1 class="page-header">
                             Page Heading
@@ -46,9 +45,6 @@
                         <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
                         <hr>
                         <p><?php echo $post_content ?></p>
-                        <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-
                         <hr>
                         <?php
                         }};
