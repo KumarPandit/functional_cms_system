@@ -6,7 +6,7 @@ if(isset($_GET['p_id'])){
 }
 
 
-$query = "SELECT * FROM posts WHERE post_id=$the_post_id ";
+$query = "SELECT * FROM posts WHERE post_id={$the_post_id} ";
 $select_posts_by_id = mysqli_query($connection, $query);
 while($row = mysqli_fetch_assoc($select_posts_by_id)) {
     $post_id = $row['post_id'];
@@ -52,6 +52,8 @@ if(isset($_POST['update_post'])){
     $update_post = mysqli_query($connection,$query);
 
     confirmQuery($update_post);
+
+    echo "<p class ='bg-success'>Post Updated. <a href='../post.php?p_id={$post_id} '>View Post</a> or <a href ='posts.php'>Edit More Posts</a> </p>";
 };
 
 
