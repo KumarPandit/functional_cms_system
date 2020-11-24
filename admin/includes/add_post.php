@@ -20,6 +20,8 @@ if(isset($_POST['create_post'])){
     $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}' ) ";
     $insert_post_query = mysqli_query($connection,$query);
     confirmQuery($insert_post_query);
+    $the_post_id = mysqli_insert_id($connection);
+    echo "<p class='bg-success'>Post Created. <a href='../post.php?p_id={$the_post_id}'>view post</a></p>";
 }
 ?>
 
