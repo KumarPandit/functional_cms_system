@@ -1,21 +1,26 @@
-<?php // include "includes/db.php"; ?>
- <?php  include "includes/header.php";
- global $connection;?>
+<?php  include "includes/header.php"; ?>
+<?php  include "includes/navigation.php"; ?>
  <?php
 
 
-if(isset($_POST['submit'])){
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-echo $username = mysqli_real_escape_string($connection, $username);
-echo $email = mysqli_real_escape_string($connection, $email);
-$password = mysqli_real_escape_string($connection, $password);
+if(isset($_POST['submit'])) {
+    global $connection;
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($connection, $username);
+    $email = mysqli_real_escape_string($connection, $email);
+    $password = mysqli_real_escape_string($connection, $password);
+    $query = "SELECT randSalt FROM users";
+    $select_randSalt_query = mysqli_query($connection, $query);
+    if (!$select_randSalt_query) {
+        die("Query failed" . mysqli_error($connection));
+    };
 }
 ?>
     <!-- Navigation -->
     
-    <?php  include "includes/navigation.php"; ?>
+
     
  
     <!-- Page Content -->
